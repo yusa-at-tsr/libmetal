@@ -67,7 +67,7 @@ void *metal_machine_io_mem_map(void *va, metal_phys_addr_t pa,
 	/* Add implementation here */
 	void *__attribute__((unused)) physaddr;
 
-	va = Xil_MemMap(pa, size, flags);
+	physaddr = Xil_MemMap(pa, size, flags);
 
 	return va;
 }
