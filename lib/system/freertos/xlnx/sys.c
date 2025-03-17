@@ -129,11 +129,8 @@ void *metal_machine_io_mem_map(void *va, metal_phys_addr_t pa,
 {
 	void *__attribute__((unused)) physaddr;
 
-#ifdef VERSAL_NET
-	va = metal_machine_io_mem_map_versal_net(va, pa, size, flags);
-#else
 	physaddr = Xil_MemMap(pa, size, flags);
 	metal_assert(physaddr == (void *)pa);
-#endif
+
 	return va;
 }
