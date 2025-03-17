@@ -129,7 +129,7 @@ void *metal_machine_io_mem_map(void *va, metal_phys_addr_t pa,
 {
 	void *__attribute__((unused)) physaddr;
 
-	physaddr = Xil_MemMap(pa, size, flags);
+	va = Xil_MemMap(pa, size, flags);
 	//metal_assert(physaddr == (void *)pa);
 
 	return va;

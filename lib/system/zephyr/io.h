@@ -39,9 +39,7 @@ static inline void metal_sys_io_mem_map(struct metal_io_region *io)
 static inline void *metal_machine_io_mem_map(void *va, metal_phys_addr_t pa,
 					     size_t size, unsigned int flags)
 {
-	metal_unused(pa);
-	metal_unused(size);
-	metal_unused(flags);
+	va = Xil_MemMap(pa, size, flags);
 
 	return va;
 }
