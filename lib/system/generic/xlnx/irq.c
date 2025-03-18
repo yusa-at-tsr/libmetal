@@ -66,6 +66,8 @@ int metal_xlnx_irq_init(void)
 {
 	int ret;
 
+	metal_log(METAL_LOG_DEBUG, "%s: debug print test.\n", __func__);
+
 	ret =  metal_irq_register_controller(&xlnx_irq_cntr);
 	if (ret < 0) {
 		metal_log(METAL_LOG_ERROR, "%s: register irq controller failed.\n",
